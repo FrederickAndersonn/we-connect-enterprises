@@ -1,10 +1,11 @@
-import React from 'react'
+import React, {useEffect, useRef} from 'react'
 import {AiOutlineClose, AiOutlineMenu} from 'react-icons/ai'
 import { useState } from 'react'
 import MainIcon from '../assets/MainLogo.png'
 
 const Navbar = () => {
     const [nav, setNav] = useState(false)
+    const navRef = useRef(null);
     const handleNav = () => {
         setNav(!nav)
         console.log(nav)
@@ -15,8 +16,21 @@ const Navbar = () => {
       element.scrollIntoView({ behavior: 'smooth' });
     };
 
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+          if (navRef.current && !navRef.current.contains(event.target)) {
+            setNav(false);
+          }
+        };
+  
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+          document.removeEventListener("mousedown", handleClickOutside);
+        };
+      }, [nav]);
+
   return (
-    <div className="flex justify-between text-white items-center h-24 max-w-[1240px] px-4 mx-auto ">
+    <div ref={navRef} className="flex justify-between text-white items-center h-24 max-w-[1240px] px-4 mx-auto ">
         <img src={MainIcon} className='w-36'  alt="logo"/>
         <ul className='hidden md:flex z-10'>
             <li className='p-4'><button onClick={() => handleScroll('home')}>Home</button></li>
