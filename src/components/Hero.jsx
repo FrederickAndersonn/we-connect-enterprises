@@ -1,5 +1,4 @@
 import React from 'react'
-import LandingImage from '../assets/LandingImage.png'
 
 const Hero = () => {
     const handleScroll = (id) => {

@@ -29,7 +29,7 @@ const Navbar = () => {
             {nav ? <AiOutlineClose size={20}/> : <AiOutlineMenu size={20}/>}
         </div>
         <div className={nav ? 'fixed left-0 top-0 w-[60%] h-full border-r border-r-gray-900 bg-[#000300] ease-in-out duration-500 md:hidden': 'fixed left-[-100%]'}>
-        <img src={MainIcon} className='w-36 p-4'/>
+        <img src={MainIcon} className='w-36 p-4' alt="logo"/>
             <ul className='pt-24 uppercase p-4'>
                 <li className='p-4 border-b border-gray-600'><button onClick={() => handleScroll('home')}>Home</button></li>
                 <li className='p-4 border-b border-gray-600'><button onClick={() => handleScroll('about')}>About Us</button></li>
