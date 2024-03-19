@@ -17,7 +17,7 @@ const Navbar = () => {
 
   return (
     <div className="flex justify-between text-white items-center h-24 max-w-[1240px] px-4 mx-auto ">
-        <img src={MainIcon} className='w-36'/>
+        <img src={MainIcon} className='w-36'  alt="logo"/>
         <ul className='hidden md:flex z-10'>
             <li className='p-4'><button onClick={() => handleScroll('home')}>Home</button></li>
             <li className='p-4'><button onClick={() => handleScroll('about')}>About Us</button></li>
