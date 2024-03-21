@@ -21,7 +21,7 @@ const ContactUs = () => {
           );
       };
     return (
-        <div id= "contact" className="flex flex-col items-center justify-center w-full h-screen">
+        <div id= "contact" className="flex flex-col items-center justify-center w-full h-screen p-4">
             <h1 className="text-2xl md:text-4xl font-bold mb-4 text-white">Contact Us</h1>
             <form className="w-full max-w-md" ref={form} onSubmit={sendEmail}>
                 <div className="flex flex-wrap -mx-3 mb-6">

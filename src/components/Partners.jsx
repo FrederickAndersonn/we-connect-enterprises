@@ -1,16 +1,21 @@
 import React from 'react';
+import lenteraNusantara from '../assets/lenteranusantara.png';
 
 const PastPartners = () => {
-    const partners = ['Company A', 'Company B', 'Company C', 'Company D']; // Replace with your actual data
+    const partners = [
+        { name: 'Lentera Nusantara', logo: lenteraNusantara },
+    ];
 
     return (
-        <div id="partners" className="flex flex-col items-center w-full h-screen p-20">
-            <h1 className="text-2xl md:text-4xl font-bold mb-4 text-white mb-20">Past Partners</h1>
-            <ul className="w-3/4 text-center">
+        <div id="partners" className="flex flex-col items-center w-full h-auto p-20 ">
+            <h1 className="text-2xl md:text-3xl font-bold mb-4 text-white">Past Partners</h1>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {partners.map((partner, index) => (
-                    <li key={index} className="mb-2">{partner}</li>
+                    <div key={index} className="flex justify-center items-center max-w-xs max-h-xs">
+                        <img src={partner.logo} alt={partner.name} className="w-[100px] md:w-[200px] object-cover" />
+                    </div>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 };
